@@ -1,0 +1,4 @@
+interface:
+  display_name: "R Scripts"
+  short_description: "Create reproducible R scripts for RStudio and command-line workflows"
+  default_prompt: "Create a reproducible R script for this medical statistics task, with clear sections, runnable code, saved outputs when useful, and a concise interpretation."

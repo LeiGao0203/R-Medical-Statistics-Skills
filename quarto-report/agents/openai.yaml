@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quarto Reports"
+  short_description: "Create Quarto and R Markdown statistical reports"
+  default_prompt: "Create a reproducible Quarto report for this medical statistics task, with narrative sections, executable R chunks, tables, figures, and report-ready interpretation."

@@ -7,4 +7,4 @@ Portions of the medical statistics skills in basic-stats/, advanced-stats/, and 
 - Author: 阿越就是我
 - License: CC BY-SA 4.0
 
-The jupyter-notebook/ skill is original content in this repository and is licensed separately under Apache License 2.0.
+The r-script/, quarto-report/, and jupyter-notebook/ skills are original content in this repository and are licensed separately under Apache License 2.0.

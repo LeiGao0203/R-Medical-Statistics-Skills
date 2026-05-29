@@ -24,10 +24,12 @@ You may share and adapt these materials if you provide appropriate attribution, 
 License text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
 Human-readable summary: https://creativecommons.org/licenses/by-sa/4.0/
 
-2. Jupyter Notebook skill
+2. Original workflow skills
 
 The contents under:
 
+- r-script/
+- quarto-report/
 - jupyter-notebook/
 
 are original work by this repository's author and are licensed under the Apache License, Version 2.0. See jupyter-notebook/LICENSE.txt for the full license text.
