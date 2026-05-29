@@ -1,0 +1,10 @@
+Medical statistics content attribution
+
+Portions of the medical statistics skills in basic-stats/, advanced-stats/, and literature-stats/ are adapted from:
+
+- "R语言实战医学统计"
+- Original project: https://github.com/ayueme/R_medical_stat
+- Author: 阿越就是我
+- License: CC BY-SA 4.0
+
+The jupyter-notebook/ skill is original content in this repository and is licensed separately under Apache License 2.0.

@@ -1,0 +1,41 @@
+R Medical Statistics Skills - License Notice
+
+This repository uses multiple licenses.
+
+1. Medical statistics skills
+
+The contents under:
+
+- basic-stats/
+- advanced-stats/
+- literature-stats/
+
+that are adapted from or related to "R语言实战医学统计" are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+
+Source attribution:
+
+- Original project: R_medical_stat
+- Author: 阿越就是我
+- URL: https://github.com/ayueme/R_medical_stat
+- License: CC BY-SA 4.0
+
+You may share and adapt these materials if you provide appropriate attribution, indicate changes where applicable, and distribute adapted material under the same license.
+
+License text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by-sa/4.0/
+
+2. Jupyter Notebook skill
+
+The contents under:
+
+- jupyter-notebook/
+
+are original work by this repository's author and are licensed under the Apache License, Version 2.0. See jupyter-notebook/LICENSE.txt for the full license text.
+
+3. Examples
+
+The example/ directory is reserved for future examples. Unless a file in example/ says otherwise, example content should be treated as unlicensed draft material until an explicit license notice is added.
+
+4. Contributions
+
+Unless otherwise stated in a contribution, contributions to a directory are licensed under that directory's existing license.
