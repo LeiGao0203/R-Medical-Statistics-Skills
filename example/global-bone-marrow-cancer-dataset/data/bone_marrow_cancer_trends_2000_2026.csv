@@ -1,0 +1,28 @@
+Year,Global_Myeloma_New_Cases,Global_Leukemia_New_Cases,Global_MDS_New_Cases,Global_Myeloma_Deaths,Global_Leukemia_Deaths,Myeloma_5Y_Survival_Pct,Leukemia_5Y_Survival_Pct,MDS_5Y_Survival_Pct,Global_BMT_Procedures,Key_Milestone
+2000,84360,308112,50927,62367,225253,32.7,41.6,18.2,45273,
+2001,87954,297780,53020,63869,228290,33.7,42.7,18.4,46644,Imatinib (Gleevec) FDA approved for CML — first targeted TKI
+2002,88377,309276,52667,61872,231674,35.0,44.1,19.2,47282,Bortezomib (Velcade) shows efficacy in relapsed MM trials
+2003,90687,321573,51366,64272,232216,35.7,45.6,19.9,50645,Bortezomib FDA approved for relapsed MM — first proteasome inhibitor
+2004,91395,318520,55201,64248,233775,37.2,45.7,20.3,50557,WHO classification updated; MDS/MPN entities refined
+2005,95270,329237,55589,65282,236933,38.7,47.5,20.9,54127,Lenalidomide FDA approved for MDS with del(5q)
+2006,96785,348196,54736,64521,237147,39.1,48.2,21.0,55523,Lenalidomide + Dex approved for relapsed MM
+2007,97246,341649,57897,64910,250562,39.9,49.8,21.8,55012,Dasatinib and Nilotinib approved as 2nd-gen TKIs for CML
+2008,96994,359477,59773,67880,252443,41.0,50.3,22.0,58854,JAK2 V617F testing becomes standard for MPN diagnosis
+2009,102583,355753,57808,66813,248070,42.7,51.6,23.0,59076,Bendamustine + Rituximab becomes standard for CLL
+2010,101333,370682,62272,68450,257113,43.5,52.5,23.2,59020,Pomalidomide enters clinical trials for MM
+2011,103086,362124,62777,68053,255431,45.0,53.3,23.7,63280,Ruxolitinib FDA approved for myelofibrosis — first JAK inhibitor
+2012,105691,369575,62136,68028,264241,45.9,54.7,24.5,65064,Ibrutinib breakthrough therapy designation for CLL
+2013,107254,394886,64502,71352,266076,46.5,55.3,24.7,65188,Ibrutinib and Idelalisib FDA approved for CLL/MCL
+2014,113301,400893,62820,70725,260900,47.4,56.3,25.3,68831,Blinatumomab FDA approved for ALL — first bispecific antibody
+2015,111850,399449,67580,70716,271987,49.2,57.5,25.9,67805,Daratumumab and Elotuzumab FDA approved for MM; CAR-T trials expand
+2016,113436,394329,68192,71931,259620,49.6,59.2,26.2,68704,Venetoclax FDA approved for CLL with del(17p)
+2017,116716,424211,67282,73289,273324,50.6,60.1,26.8,72344,Tisagenlecleucel (Kymriah) FDA approved — first CAR-T for ALL
+2018,119610,419698,67512,74631,268481,51.6,60.4,27.5,74131,Ivosidenib (IDH1) and Enasidenib (IDH2) approved for AML; Gilteritinib (FLT3)
+2019,117034,425708,69348,74422,268352,53.1,61.8,28.2,73295,Venetoclax + Azacitidine approved for unfit AML; Fixed-duration CLL regimens emerge
+2020,121232,421981,74446,76084,271991,54.2,63.3,28.5,76636,COVID-19 pandemic disrupts cancer care globally; Isatuximab approved for MM
+2021,122345,427892,75422,76822,280522,54.9,63.9,29.2,79935,Idecabtagene vicleucel (Ide-cel) — first CAR-T for MM; Luspatercept for MDS anemia
+2022,129069,452676,75043,73752,274903,56.5,65.2,29.3,77745,Ciltacabtagene autoleucel (Cilta-cel) approved for MM; Teclistamab (first bispecific for MM); WHO 2022 classification update
+2023,129265,438383,73256,76482,286157,57.3,65.9,30.2,79944,Talquetamab approved for MM; Imetelstat for MDS; BET inhibitors in trials
+2024,128519,465179,77314,78490,287897,58.3,66.8,30.5,81633,Multiple CAR-T products expand to earlier MM lines; AI-driven genomics for MDS risk stratification
+2025,129726,478196,76837,79323,289762,59.5,68.0,31.2,84337,Fixed-duration triplet regimens becoming standard in CLL; CRISPR-edited cell therapies enter Phase II trials for leukemia
+2026,131176,477894,77221,75890,292329,60.0,68.0,31.9,88089,Next-gen bispecifics and off-the-shelf CAR-NK trials underway; MRD-guided treatment adaptation

@@ -1,0 +1,11 @@
+"Variable","Test","Statistic","p_value"
+"age","Kruskal-Wallis","H=7.47",0.0238252069501144
+"daily_social_media_hours","Kruskal-Wallis","H=549.55",4.63290348903212e-120
+"sleep_hours","Kruskal-Wallis","H=0.43",0.80594914589889
+"screen_time_before_sleep","Kruskal-Wallis","H=323.91",4.61571948017651e-71
+"academic_performance","Kruskal-Wallis","H=1.02",0.599768894559321
+"physical_activity","Kruskal-Wallis","H=3.30",0.192442560194338
+"stress_level","Kruskal-Wallis","H=2.05",0.359184107308118
+"anxiety_level","Kruskal-Wallis","H=0.36",0.833804596304237
+"addiction_level","Kruskal-Wallis","H=0.83",0.658794138174212
+"mental_health_risk_score","Kruskal-Wallis","H=0.51",0.773988527217685

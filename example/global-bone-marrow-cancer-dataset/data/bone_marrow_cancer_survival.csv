@@ -1,0 +1,29 @@
+Cancer_Type,Income_Region,One_Year_Survival_Pct,Three_Year_Survival_Pct,Five_Year_Survival_Pct,Ten_Year_Survival_Pct,Typical_Treatment,Treatment_Access_Level
+Multiple Myeloma,High-Income,87.0,72.0,59.8,35.0,VRd → Auto-SCT → Lenalidomide maintenance,Full
+Multiple Myeloma,Upper-Middle,78.0,55.0,42.0,22.0,VRd or Bortezomib-based; Limited SCT,Moderate
+Multiple Myeloma,Lower-Middle,62.0,35.0,25.0,10.0,Melphalan-Prednisone; BSC,Limited
+Multiple Myeloma,Low-Income,45.0,20.0,12.0,4.0,Palliative care; Melphalan if available,Minimal
+AML,High-Income,50.0,35.0,31.7,20.0,"7+3 induction → consolidation → Allo-SCT; Targeted (FLT3i, IDHi)",Full
+AML,Upper-Middle,38.0,22.0,18.0,10.0,Induction chemotherapy; Limited SCT,Moderate
+AML,Lower-Middle,28.0,12.0,8.0,3.0,Modified chemotherapy; BSC,Limited
+AML,Low-Income,15.0,5.0,3.0,1.0,Supportive care; transfusions if available,Minimal
+ALL,High-Income,85.0,75.0,71.3,60.0,Multi-agent chemo; CNS prophylaxis; Allo-SCT; CAR-T cell therapy,Full
+ALL,Upper-Middle,72.0,55.0,48.0,35.0,Multi-agent chemo; CNS prophylaxis; Limited SCT,Moderate
+ALL,Lower-Middle,55.0,35.0,28.0,15.0,Modified chemo protocols,Limited
+ALL,Low-Income,35.0,18.0,12.0,5.0,Basic chemo; Often incomplete protocols,Minimal
+CML,High-Income,96.0,90.0,73.2,60.0,TKI therapy (Imatinib/Dasatinib/Nilotinib); Allo-SCT for TKI failure,Full
+CML,Upper-Middle,88.0,78.0,62.0,45.0,Imatinib (generic available); Limited newer TKIs,Moderate
+CML,Lower-Middle,75.0,60.0,45.0,28.0,Imatinib (access programs); Hydroxyurea,Limited
+CML,Low-Income,55.0,35.0,22.0,10.0,Hydroxyurea; Interferon; Limited TKI access,Minimal
+CLL,High-Income,95.0,90.0,87.9,72.0,BTK inhibitors; BCL2 inhibitors; Chemoimmunotherapy,Full
+CLL,Upper-Middle,90.0,82.0,75.0,58.0,Chemoimmunotherapy; Limited targeted therapy,Moderate
+CLL,Lower-Middle,82.0,68.0,58.0,38.0,Chlorambucil ± Rituximab,Limited
+CLL,Low-Income,68.0,50.0,38.0,20.0,Chlorambucil; Supportive care,Minimal
+MDS,High-Income,72.0,48.0,30.0,15.0,Azacitidine/Decitabine; Lenalidomide (del5q); Luspatercept; Allo-SCT,Full
+MDS,Upper-Middle,58.0,32.0,18.0,8.0,Azacitidine; ESA; Limited SCT,Moderate
+MDS,Lower-Middle,45.0,22.0,10.0,3.0,ESA; Transfusions; BSC,Limited
+MDS,Low-Income,30.0,12.0,5.0,1.5,Blood transfusions; BSC,Minimal
+Primary Myelofibrosis,High-Income,78.0,60.0,40.0,22.0,Ruxolitinib; Fedratinib; Allo-SCT,Full
+Primary Myelofibrosis,Upper-Middle,62.0,42.0,25.0,12.0,Ruxolitinib; Hydroxyurea; BSC,Moderate
+Primary Myelofibrosis,Lower-Middle,48.0,28.0,15.0,5.0,Hydroxyurea; Transfusions; BSC,Limited
+Primary Myelofibrosis,Low-Income,32.0,15.0,8.0,2.0,Supportive care; Transfusions,Minimal

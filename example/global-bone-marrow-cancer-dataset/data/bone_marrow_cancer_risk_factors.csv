@@ -1,0 +1,16 @@
+Risk_Factor,Category,Relative_Risk,Population_Attributable_Fraction_Pct,Evidence_Level,Associated_Cancers,Modifiable,Description
+Age (60+),Demographic,3.5,35.0,Strong,"MM, AML, MDS, CLL, MPN",False,Median age at diagnosis 65-70 for most BM cancers; exponential increase after 55
+Male Sex,Demographic,1.4,12.0,Strong,"MM, AML, CLL, MDS",False,Male-to-female ratio ~1.4:1 for most bone marrow cancers
+African American / Black Ancestry,Demographic,2.0,8.0,Strong,MM,False,Multiple myeloma incidence 2× higher in Black populations (SEER data)
+Family History of Hematologic Cancer,Genetic,2.5,5.0,Strong,"ALL, CLL, MM, MPN",False,First-degree relative with blood cancer increases risk 2-4×
+Prior Chemotherapy / Radiation,Medical,4.0,6.0,Strong,"AML, MDS",False,"Therapy-related AML/MDS accounts for 10-20% of cases; alkylating agents, topoisomerase II inhibitors"
+Benzene Exposure,Environmental,2.5,3.0,Strong,"AML, MDS, ALL",True,Occupational benzene exposure is an established leukemia risk factor (IARC Group 1 carcinogen)
+Ionizing Radiation,Environmental,2.0,2.5,Strong,"AML, ALL, CML, MDS",True,"Atomic bomb survivors, nuclear workers, medical radiation; dose-response relationship"
+Smoking / Tobacco,Lifestyle,1.4,8.0,Moderate,"AML, MDS",True,Cigarette smoking increases AML risk ~40%; benzene in tobacco smoke
+Obesity / High BMI,Lifestyle,1.2,10.0,Moderate,"MM, AML, MPN",True,Obesity associated with chronic inflammation and altered cytokine profile
+Autoimmune Diseases,Medical,1.8,3.0,Moderate,"ALL, CLL, MM",False,"Rheumatoid arthritis, SLE, autoimmune hemolytic anemia increase risk"
+"Chronic Infections (HIV, HCV, EBV)",Medical,1.6,2.0,Moderate,"MM, ALL, WM",False,HIV patients have 2-3× risk of MM; HCV associated with MM and WM
+Down Syndrome (Trisomy 21),Genetic,20.0,0.3,Strong,"ALL, AML",False,Children with Down syndrome have 10-20× increased risk of acute leukemia
+MGUS (Monoclonal Gammopathy),Medical,25.0,4.0,Strong,"MM, WM, AL Amyloidosis",False,MGUS is a precursor condition; 1% per year progresses to myeloma
+Pesticide / Herbicide Exposure,Environmental,1.5,2.0,Moderate,"MM, CLL, AML",True,Agricultural workers with prolonged pesticide exposure show increased risk
+Agent Orange Exposure,Environmental,2.0,0.5,Moderate,"CLL, ALL, MM",True,Vietnam War veterans exposed to Agent Orange have elevated risk (VA recognized)

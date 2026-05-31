@@ -1,0 +1,31 @@
+"Variable","Comparison","p_value"
+"age","Moderate vs Healthy",0.0650402861067494
+"age","At Risk vs Healthy",0.0502068710564434
+"age","At Risk vs Moderate",1
+"daily_social_media_hours","Moderate vs Healthy",5.93984229151813e-74
+"daily_social_media_hours","At Risk vs Healthy",2.40528727952206e-67
+"daily_social_media_hours","At Risk vs Moderate",1.0502277708665e-47
+"sleep_hours","Moderate vs Healthy",1
+"sleep_hours","At Risk vs Healthy",1
+"sleep_hours","At Risk vs Moderate",1
+"screen_time_before_sleep","Moderate vs Healthy",7.41014426658515e-34
+"screen_time_before_sleep","At Risk vs Healthy",1.98145717406441e-67
+"screen_time_before_sleep","At Risk vs Moderate",4.87337069136323e-24
+"academic_performance","Moderate vs Healthy",1
+"academic_performance","At Risk vs Healthy",1
+"academic_performance","At Risk vs Moderate",0.941251729029041
+"physical_activity","Moderate vs Healthy",1
+"physical_activity","At Risk vs Healthy",0.520827619299397
+"physical_activity","At Risk vs Moderate",0.202970378092392
+"stress_level","Moderate vs Healthy",1
+"stress_level","At Risk vs Healthy",1
+"stress_level","At Risk vs Moderate",0.512999583850129
+"anxiety_level","Moderate vs Healthy",1
+"anxiety_level","At Risk vs Healthy",1
+"anxiety_level","At Risk vs Moderate",1
+"addiction_level","Moderate vs Healthy",1
+"addiction_level","At Risk vs Healthy",1
+"addiction_level","At Risk vs Moderate",1
+"mental_health_risk_score","Moderate vs Healthy",1
+"mental_health_risk_score","At Risk vs Healthy",1
+"mental_health_risk_score","At Risk vs Moderate",1

@@ -1,0 +1,51 @@
+Country,Region,Continent,Population_M,Myeloma_New_Cases,Leukemia_New_Cases,Myeloma_Deaths,Leukemia_Deaths,Myeloma_Incidence_Per_100K,Leukemia_Incidence_Per_100K,Myeloma_5Y_Survival_Pct,Leukemia_5Y_Survival_Pct,BMT_Centers,BMT_Access_Score,Hematologists_Per_Million
+United States,North America,Americas,331.9,35780,59610,12590,23710,7.2,14.2,59.8,65.0,195,95,12.5
+China,East Asia,Asia,1412.0,20100,75000,14500,51500,1.6,5.5,42.0,38.0,168,62,2.8
+India,South Asia,Asia,1408.0,14200,42000,11800,35000,1.2,3.3,28.0,25.0,78,30,0.9
+Japan,East Asia,Asia,125.7,7800,14200,4200,8800,6.0,10.6,48.0,58.0,120,88,8.4
+Germany,Western Europe,Europe,83.2,6700,15200,3100,7600,7.5,13.8,55.0,62.0,98,92,10.2
+United Kingdom,Northern Europe,Europe,67.3,5900,10300,3100,4900,9.3,14.0,52.0,60.0,62,90,9.5
+France,Western Europe,Europe,67.8,5500,10800,3000,5500,8.4,14.6,54.0,61.0,72,91,9.8
+Brazil,South America,Americas,214.3,6800,12000,4500,8200,3.8,5.8,38.0,40.0,85,55,3.2
+Italy,Southern Europe,Europe,59.6,5800,10100,3200,4800,9.8,14.2,53.0,60.0,68,89,9.0
+Canada,North America,Americas,38.2,3600,6900,1500,2800,7.5,14.0,56.0,63.0,32,93,11.0
+South Korea,East Asia,Asia,51.7,2800,5600,1700,3100,5.5,10.8,50.0,62.0,55,85,7.5
+Australia,Oceania,Oceania,25.7,2200,4900,950,1900,8.8,14.5,57.0,64.0,28,94,12.0
+Spain,Southern Europe,Europe,47.4,3200,7200,1800,3600,7.0,13.5,54.0,61.0,45,88,8.8
+Russia,Eastern Europe,Europe,144.1,5400,12500,3800,9200,3.2,7.2,35.0,38.0,52,48,3.5
+Mexico,Central America,Americas,130.0,3100,7400,2200,5600,2.8,5.5,32.0,35.0,28,38,2.0
+Turkey,Western Asia,Asia,85.3,3500,6800,2300,4200,4.2,8.0,40.0,48.0,38,65,4.2
+Netherlands,Western Europe,Europe,17.5,1400,3200,600,1500,8.0,15.2,56.0,64.0,18,94,11.5
+Poland,Eastern Europe,Europe,37.7,2200,4600,1200,2400,5.8,11.0,45.0,52.0,22,72,5.5
+Sweden,Northern Europe,Europe,10.4,680,1800,300,850,7.2,15.0,58.0,66.0,12,96,13.0
+Switzerland,Western Europe,Europe,8.7,650,1500,280,680,8.5,15.5,60.0,67.0,10,97,14.0
+Belgium,Western Europe,Europe,11.6,850,2100,380,1000,8.2,16.0,55.0,63.0,12,93,10.5
+Austria,Western Europe,Europe,9.0,600,1400,260,650,7.8,14.8,57.0,65.0,10,94,11.0
+Norway,Northern Europe,Europe,5.4,420,1000,180,480,8.0,16.2,58.0,66.0,6,96,13.5
+Denmark,Northern Europe,Europe,5.9,380,950,160,450,7.5,15.0,56.0,64.0,6,95,12.5
+Israel,Western Asia,Asia,9.4,500,1200,200,550,6.5,12.0,55.0,62.0,12,92,10.5
+Singapore,Southeast Asia,Asia,5.9,220,500,100,250,4.8,9.5,52.0,60.0,5,90,9.0
+New Zealand,Oceania,Oceania,5.1,350,800,150,380,7.5,14.0,56.0,63.0,4,93,11.0
+Argentina,South America,Americas,46.0,2100,4500,1300,3000,5.5,9.8,40.0,45.0,22,58,4.0
+Saudi Arabia,Western Asia,Asia,36.0,1200,2100,650,1200,3.5,6.0,48.0,52.0,15,72,5.0
+UAE,Western Asia,Asia,9.9,280,550,120,280,3.2,6.5,50.0,55.0,6,80,6.5
+Pakistan,South Asia,Asia,231.4,4200,11000,3500,9200,1.8,4.8,22.0,20.0,18,18,0.5
+Bangladesh,South Asia,Asia,169.4,2100,6500,1800,5600,1.3,3.9,18.0,15.0,8,12,0.3
+Indonesia,Southeast Asia,Asia,273.8,3800,9500,3200,7800,1.5,3.6,22.0,20.0,22,20,0.6
+Nigeria,West Africa,Africa,218.5,2800,8500,2600,7800,1.4,4.0,12.0,10.0,5,8,0.2
+South Africa,Southern Africa,Africa,59.9,1500,3500,1100,2800,2.8,6.0,28.0,25.0,12,30,1.5
+Egypt,North Africa,Africa,109.3,3200,7800,2600,6200,3.0,7.2,30.0,28.0,18,35,1.8
+Kenya,East Africa,Africa,54.0,800,2500,700,2200,1.6,4.8,15.0,12.0,3,10,0.3
+Ethiopia,East Africa,Africa,123.4,1200,4500,1100,4100,1.0,3.7,10.0,8.0,2,5,0.1
+Ghana,West Africa,Africa,33.5,500,1500,450,1350,1.5,4.5,14.0,11.0,2,8,0.2
+Morocco,North Africa,Africa,37.5,1000,2800,800,2200,2.8,7.5,32.0,30.0,8,28,1.2
+Thailand,Southeast Asia,Asia,71.8,1800,4200,1200,3000,2.8,5.8,38.0,42.0,18,55,3.0
+Vietnam,Southeast Asia,Asia,98.2,1500,3800,1200,3000,1.8,4.0,30.0,32.0,12,35,1.5
+Philippines,Southeast Asia,Asia,113.9,1600,4200,1400,3500,1.5,3.8,25.0,22.0,10,22,0.8
+Iran,Western Asia,Asia,87.9,2200,4500,1600,3200,2.5,5.2,35.0,40.0,22,50,2.8
+Colombia,South America,Americas,51.9,1300,3100,900,2200,2.8,6.0,38.0,42.0,15,48,2.5
+Peru,South America,Americas,33.7,800,2000,600,1500,2.5,6.2,35.0,38.0,8,40,2.0
+Chile,South America,Americas,19.5,650,1600,420,1000,3.5,8.0,42.0,48.0,10,58,3.5
+Cuba,Caribbean,Americas,11.3,350,900,250,600,3.2,8.2,38.0,42.0,4,52,3.0
+Tanzania,East Africa,Africa,63.6,650,2200,600,2000,1.1,3.5,10.0,8.0,1,5,0.1
+Uganda,East Africa,Africa,47.2,500,1800,470,1650,1.2,3.8,12.0,9.0,1,5,0.1
