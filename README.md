@@ -16,89 +16,9 @@
 
 ## Examples
 
-`example/` 目录目前包含 3 个医学与健康统计分析示例，可用于展示本项目 skills 在真实数据上的典型工作流。每个示例通常包含 `data/` 原始数据、`analysis/` 分析代码与结果表，以及 `analysis/figures/` 中的可视化结果。
+`example/` 目录提供一个较完整、代表性更强的医学统计案例，用于展示本项目 skills 如何把公开数据整理成可复现的 R 分析流程。示例包含 `data/` 原始数据、`analysis/` 分析脚本与结果表，以及 `analysis/figures/` 中可直接用于报告的图表。
 
-### 1. Teen Mental Health
-
-- **数据来源**：[Teen Mental Health](https://www.kaggle.com/datasets/argonnxx/teen-mental-health)
-- **示例目录**：`example/teen-mental-health/`
-- **数据规模**：1200 条青少年社交媒体使用、睡眠、压力、焦虑、成瘾程度、心理健康风险评分和抑郁标签记录。
-
-这个示例把青少年数字行为与心理健康风险联系起来，适合演示“探索性分析 + 组间比较 + 预测建模”的完整流程。分析从 `digital_wellbeing_flag` 分层的基线表开始，比较 Healthy、Moderate 和 At Risk 三组在社交媒体时长、睡眠、压力、焦虑和学业表现上的差异，再进一步构建抑郁标签的 Logistic 回归模型。
-
-主要分析结果保存在 `analysis/`：
-
-- `table1_by_wellbeing.csv`：按数字健康分组的 Table 1。At Risk 组平均每日社交媒体使用约 7.09 小时，高于 Moderate 组的 4.84 小时和 Healthy 组的 2.55 小时。
-- `multivariate_logistic_depression.csv`：多因素 Logistic 回归结果。每日社交媒体使用、压力水平与抑郁标签呈正相关，睡眠时长呈保护性关联。
-- `roc_depression_analysis.csv`：抑郁预测模型 ROC 结果，AUC 约 0.991，灵敏度约 0.968，特异度约 0.953。
-- `analysis/figures/`：包含相关热图、风险评分直方图、PCA 图、森林图和 ROC 曲线。
-
-代表性图表：
-
-- `example/teen-mental-health/analysis/figures/correlation_heatmap.pdf`
-- `example/teen-mental-health/analysis/figures/forest_plot_depression.pdf`
-- `example/teen-mental-health/analysis/figures/roc_depression.pdf`
-
-示例图表代码片段：
-
-```r
-library(ggplot2)
-library(pROC)
-
-roc_obj <- roc(df$depression_label, df$pred_prob)
-
-ggroc(roc_obj, linewidth = 1.1, color = "#2C7FB8") +
-  geom_abline(linetype = "dashed", color = "grey60") +
-  theme_bw() +
-  labs(
-    title = "ROC curve for depression prediction",
-    subtitle = paste0("AUC = ", round(auc(roc_obj), 3)),
-    x = "1 - Specificity",
-    y = "Sensitivity"
-  )
-```
-
-### 2. Lung Cancer
-
-- **数据来源**：[Lung Cancer](https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer)
-- **示例目录**：`example/lung-cancer/`
-- **数据规模**：309 条肺癌风险因素问卷记录，包含年龄、性别、吸烟、焦虑、慢性病、疲劳、咳嗽、气促、吞咽困难、胸痛和肺癌标签。
-
-这个示例更接近医学问卷或病例-对照数据分析场景，适合演示分类变量整理、基线特征表、组间检验、单因素筛选、多因素 Logistic 回归和 ROC 评价。分析目标是识别与肺癌标签相关的症状和暴露因素，并展示模型的区分能力。
-
-主要分析结果保存在 `analysis/`：
-
-- `table1_baseline_characteristics.csv`：肺癌组与非肺癌组基线表。肺癌组在黄手指、焦虑、同伴压力、疲劳、过敏、喘息等变量上的比例更高。
-- `univariate_logistic_regression.csv` 和 `multivariate_logistic_regression.csv`：单因素和多因素 Logistic 回归结果。多因素模型中，咳嗽、吞咽困难、疲劳、慢性病、同伴压力等变量显示较高 OR。
-- `roc_analysis.csv`：多因素模型 ROC 结果，AUC 约 0.965，灵敏度约 0.863，特异度约 0.974。
-- `pca_loadings.csv`：PCA 载荷结果，用于观察症状变量之间的综合结构。
-
-代表性图表：
-
-- `example/lung-cancer/analysis/figures/bar_symptoms_prevalence.pdf`
-- `example/lung-cancer/analysis/figures/forest_plot_univariate.pdf`
-- `example/lung-cancer/analysis/figures/roc_curve_multivariable.pdf`
-- `example/lung-cancer/analysis/figures/pca_biplot.pdf`
-
-示例图表代码片段：
-
-```r
-library(ggplot2)
-
-ggplot(symptom_summary, aes(x = reorder(symptom, prevalence), y = prevalence, fill = lung_cancer)) +
-  geom_col(position = "dodge", width = 0.75) +
-  coord_flip() +
-  scale_y_continuous(labels = scales::percent_format()) +
-  theme_bw() +
-  labs(
-    title = "Symptom prevalence by lung cancer status",
-    x = NULL,
-    y = "Prevalence",
-    fill = "Lung cancer"
-  )
-```
-
-### 3. Global Bone Marrow Cancer Dataset
+### Global Bone Marrow Cancer Dataset
 
 - **数据来源**：[Global Bone Marrow Cancer Dataset](https://www.kaggle.com/datasets/zkskhurram/global-bone-marrow-cancer-dataset)
 - **示例目录**：`example/global-bone-marrow-cancer-dataset/`
@@ -113,14 +33,23 @@ ggplot(symptom_summary, aes(x = reorder(symptom, prevalence), y = prevalence, fi
 - `04_regression.R`：以骨髓瘤 5 年生存率为结局构建多元线性回归，并用 Logistic 回归分析高生存率国家的相关因素。
 - `05_pca_cluster_survival.R`：对国家层面指标进行 PCA 和聚类，探索国家在发病率、生存率和医疗资源上的综合分组。
 
-代表性图表：
+代表性图表如下，README 中使用 PNG 版本直接展示；对应 PDF 版本仍保留在同一目录，便于报告排版或论文附录使用。
 
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/boxplot_survival_by_continent.pdf`
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/scatter_bmt_vs_survival.pdf`
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/regression_bmt_survival.pdf`
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/pca_biplot.pdf`
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/kmeans_cluster.pdf`
-- `example/global-bone-marrow-cancer-dataset/analysis/figures/trend_survival.pdf`
+**不同大陆的骨髓瘤 5 年生存率**
+
+![Myeloma 5-year survival by continent](example/global-bone-marrow-cancer-dataset/analysis/figures/boxplot_survival_by_continent.png)
+
+**BMT 可及性与骨髓瘤 5 年生存率**
+
+![BMT access and myeloma 5-year survival](example/global-bone-marrow-cancer-dataset/analysis/figures/scatter_bmt_vs_survival.png)
+
+**国家层面指标 PCA 双标图**
+
+![PCA biplot for country-level indicators](example/global-bone-marrow-cancer-dataset/analysis/figures/pca_biplot.png)
+
+**2000-2026 年全球生存率趋势**
+
+![Global survival trend](example/global-bone-marrow-cancer-dataset/analysis/figures/trend_survival.png)
 
 示例图表代码片段：
 
