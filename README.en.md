@@ -2,7 +2,7 @@
 
 [中文版](README.md)
 
-A Codex skills collection for medical statistics and R-based statistical analysis. The project includes basic statistics, advanced statistics, commonly used methods in medical literature, and helper skills for creating plain R scripts, statistical reports, and Jupyter notebooks.
+An AI coding agent skills collection for medical statistics and R-based statistical analysis. The project uses a generic `SKILL.md` structure that can be used by Codex and by other coding agents that support skills, rules, or knowledge-base directories. You can also send the relevant directories to an agent and let it install or read them for its own runtime. The project includes basic statistics, advanced statistics, commonly used methods in medical literature, and helper skills for creating plain R scripts, statistical reports, and Jupyter notebooks.
 
 ## Contents
 
@@ -76,17 +76,19 @@ ggplot(country, aes(x = BMT_Access_Score, y = Myeloma_5Y_Survival_Pct, color = C
 
 ## Install
 
-Copy the skill directories into your local Codex skills directory:
+Default Codex install:
 
 ```bash
-mkdir -p ~/.codex/skills
-find advanced-stats basic-stats literature-stats -mindepth 1 -maxdepth 1 -type d -exec cp -R {} ~/.codex/skills/ \;
-cp -R r-script ~/.codex/skills/
-cp -R quarto-report ~/.codex/skills/
-cp -R jupyter-notebook ~/.codex/skills/
+curl -fsSL https://raw.githubusercontent.com/LeiGao0203/R-Medical-Statistics-Skills/main/install.sh | bash
 ```
 
-Restart Codex after installation. The skills will then be available for relevant medical statistics, R scripting, statistical report, and notebook tasks.
+For other coding agents, point the installer at that agent's skills, rules, or knowledge-base directory:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeiGao0203/R-Medical-Statistics-Skills/main/install.sh | AGENT_SKILLS_DIR=/path/to/agent/skills bash
+```
+
+You can also send this repository URL or the command above to an agent and let it complete the installation with its own tools. Restart or refresh the agent after installation. The skills will then be available for relevant medical statistics, R scripting, statistical report, and notebook tasks.
 
 ## License
 

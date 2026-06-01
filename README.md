@@ -2,7 +2,7 @@
 
 [English version](README.en.md)
 
-一套面向医学统计和 R 语言分析场景的 Codex skills。项目包含基础统计、高级统计、医学文献常用统计方法，以及用于生成普通 R 脚本、统计报告和维护 Jupyter Notebook 的辅助 skill。
+一套面向医学统计和 R 语言分析场景的 AI coding agent skills。项目采用通用 `SKILL.md` 结构，可供 Codex 以及其他支持技能、规则或知识库目录的 coding agent 使用；也可以把相关目录直接发送给 agent，让其按自己的运行环境安装或读取。项目包含基础统计、高级统计、医学文献常用统计方法，以及用于生成普通 R 脚本、统计报告和维护 Jupyter Notebook 的辅助 skill。
 
 ## Contents
 
@@ -76,17 +76,19 @@ ggplot(country, aes(x = BMT_Access_Score, y = Myeloma_5Y_Survival_Pct, color = C
 
 ## Install
 
-将各个 skill 目录复制到本机 Codex skills 目录：
+Codex 默认安装：
 
 ```bash
-mkdir -p ~/.codex/skills
-find advanced-stats basic-stats literature-stats -mindepth 1 -maxdepth 1 -type d -exec cp -R {} ~/.codex/skills/ \;
-cp -R r-script ~/.codex/skills/
-cp -R quarto-report ~/.codex/skills/
-cp -R jupyter-notebook ~/.codex/skills/
+curl -fsSL https://raw.githubusercontent.com/LeiGao0203/R-Medical-Statistics-Skills/main/install.sh | bash
 ```
 
-重启 Codex 后，相关 skill 会在对应医学统计、R 脚本、统计报告或 notebook 任务中触发。
+如果使用其他 coding agent，将安装目录改成该 agent 的 skills、rules 或知识库目录即可：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeiGao0203/R-Medical-Statistics-Skills/main/install.sh | AGENT_SKILLS_DIR=/path/to/agent/skills bash
+```
+
+也可以直接把本仓库地址或上述命令发送给 agent，让它根据自己的工具链完成安装。安装后重启或刷新对应 agent，相关 skill 会在医学统计、R 脚本、统计报告或 notebook 任务中触发。
 
 ## License
 
