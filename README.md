@@ -1,5 +1,9 @@
 # R Medical Statistics Skills
 
+<p align="center">
+  <img src="assets/github-promo.png" alt="R Medical Statistics Skills promotional banner">
+</p>
+
 [English version](README.en.md)
 
 一套面向医学统计和 R 语言分析场景的 AI coding agent skills。项目采用通用 `SKILL.md` 结构，可供 Codex 以及其他支持技能、规则或知识库目录的 coding agent 使用；也可以把相关目录直接发送给 agent，让其按自己的运行环境安装或读取。项目包含基础统计、高级统计、医学文献常用统计方法，以及用于生成普通 R 脚本、统计报告和维护 Jupyter Notebook 的辅助 skill。

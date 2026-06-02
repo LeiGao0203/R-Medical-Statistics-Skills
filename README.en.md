@@ -1,5 +1,9 @@
 # R Medical Statistics Skills
 
+<p align="center">
+  <img src="assets/github-promo.png" alt="R Medical Statistics Skills promotional banner">
+</p>
+
 [中文版](README.md)
 
 An AI coding agent skills collection for medical statistics and R-based statistical analysis. The project uses a generic `SKILL.md` structure that can be used by Codex and by other coding agents that support skills, rules, or knowledge-base directories. You can also send the relevant directories to an agent and let it install or read them for its own runtime. The project includes basic statistics, advanced statistics, commonly used methods in medical literature, and helper skills for creating plain R scripts, statistical reports, and Jupyter notebooks.
