@@ -28,48 +28,54 @@
 - **示例目录**：`example/global-bone-marrow-cancer-dataset/`
 - **数据规模**：包含国家层面的骨髓瘤/白血病发病率、生存率、骨髓移植可及性、血液科医生数量、治疗方式和 2000-2026 年趋势数据。
 
-这个示例用于展示更偏公共卫生和卫生服务研究的问题：不同地区的血液肿瘤负担、治疗资源可及性与生存结局之间是否存在系统差异。与前两个 notebook 示例不同，该示例主要使用拆分的 R 脚本组织分析流程，适合展示 `r-script/` skill 生成可复现 `.R` 分析管线的能力。
+这个示例用于展示更偏公共卫生和卫生服务研究的问题：不同地区的血液肿瘤负担、治疗资源可及性与生存结局之间是否存在系统差异。当前 README 以 `analysis/advanced_bone_marrow_analysis.ipynb` 作为主展示示例：notebook 使用 R kernel 编写，图表统一保存到 `analysis/advanced_figures/`，模型结果表保存到 `analysis/advanced_results/`。原有拆分 R 脚本仍保留在 `analysis/` 中，便于对照基础流程与进阶 notebook 流程。
 
 主要分析结果保存在 `analysis/`：
 
 - `table1_by_continent.csv`：按大陆汇总的描述性统计。欧洲和大洋洲的骨髓瘤 5 年生存率、BMT 可及性评分和每百万人血液科医生数量整体高于非洲等地区。
 - `01_descriptive_stats_plots.R` 至 `06_trend_analysis.R`：按分析主题拆分的 R 脚本，覆盖描述性统计、相关检验、ANOVA/卡方检验、回归、PCA/聚类和趋势分析。
-- `04_regression.R`：以骨髓瘤 5 年生存率为结局构建多元线性回归，并用 Logistic 回归分析高生存率国家的相关因素。
-- `05_pca_cluster_survival.R`：对国家层面指标进行 PCA 和聚类，探索国家在发病率、生存率和医疗资源上的综合分组。
+- `advanced_bone_marrow_analysis.ipynb`：R notebook 进阶分析流程，包含 Bootstrap 稳定性回归、GAM 非线性建模、PCA 国家表型、k-means 聚类、聚类热图、治疗时代趋势和收入地区生存轨迹。
+- `advanced_results/`：保存进阶模型结果表，包括标准化 Bootstrap 回归系数、GAM 平滑项、PCA 国家表型、聚类画像和分段趋势模型。
+- `advanced_figures/`：保存进阶图表 PNG，可直接放入 README、报告或演示文稿。
 
-代表性图表如下，README 中使用 PNG 版本直接展示；对应 PDF 版本仍保留在同一目录，便于报告排版或论文附录使用。
+代表性进阶图表如下。
 
-**不同大陆的骨髓瘤 5 年生存率**
+**Bootstrap 标准化回归系数稳定性森林图**
 
-![Myeloma 5-year survival by continent](example/global-bone-marrow-cancer-dataset/analysis/figures/boxplot_survival_by_continent.png)
+![Bootstrap coefficient stability](example/global-bone-marrow-cancer-dataset/analysis/advanced_figures/advanced_bootstrap_forest.png)
 
-**BMT 可及性与骨髓瘤 5 年生存率**
+**GAM 非线性 BMT 可及性-生存率关系**
 
-![BMT access and myeloma 5-year survival](example/global-bone-marrow-cancer-dataset/analysis/figures/scatter_bmt_vs_survival.png)
+![GAM BMT access and survival](example/global-bone-marrow-cancer-dataset/analysis/advanced_figures/advanced_gam_bmt_survival.png)
 
-**国家层面指标 PCA 双标图**
+**PCA 国家表型与聚类解释图**
 
-![PCA biplot for country-level indicators](example/global-bone-marrow-cancer-dataset/analysis/figures/pca_biplot.png)
+![PCA country phenotypes](example/global-bone-marrow-cancer-dataset/analysis/advanced_figures/advanced_pca_country_phenotypes.png)
 
-**2000-2026 年全球生存率趋势**
+**国家层面负担、资源与结局指标聚类热图**
 
-![Global survival trend](example/global-bone-marrow-cancer-dataset/analysis/figures/trend_survival.png)
+![Clustered indicator heatmap](example/global-bone-marrow-cancer-dataset/analysis/advanced_figures/advanced_clustered_indicator_heatmap.png)
+
+**治疗时代趋势面板**
+
+![Therapy-era trend panel](example/global-bone-marrow-cancer-dataset/analysis/advanced_figures/advanced_therapy_era_trends.png)
 
 示例图表代码片段：
 
 ```r
+library(mgcv)
 library(ggplot2)
 
-ggplot(country, aes(x = BMT_Access_Score, y = Myeloma_5Y_Survival_Pct, color = Continent)) +
-  geom_point(size = 3, alpha = 0.85) +
-  geom_smooth(method = "lm", se = TRUE, color = "grey30") +
-  theme_bw() +
-  labs(
-    title = "BMT access and 5-year myeloma survival",
-    x = "BMT access score",
-    y = "Myeloma 5-year survival (%)",
-    color = "Continent"
-  )
+gam_fit <- gam(
+  Myeloma_5Y_Survival_Pct ~
+    s(BMT_Access_Score, k = 5) +
+    s(Hematologists_Per_Million, k = 5) +
+    s(Myeloma_Incidence_Per_100K, k = 5),
+  data = country,
+  method = "REML"
+)
+
+gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 ```
 
 ## 推荐使用方式

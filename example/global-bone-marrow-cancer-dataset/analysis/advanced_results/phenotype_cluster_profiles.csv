@@ -1,0 +1,5 @@
+"Phenotype","n","median_survival","median_bmt_access","median_hematologists","median_case_fatality","Phenotype_Label"
+"4",17,56,93,11,0.431818181818182,"P1: high access / high survival"
+"3",9,48,72,5.5,0.545454545454545,"P2: high access / high survival"
+"2",13,35,48,2.5,0.721393034825871,"P3: low access / low survival"
+"1",11,15,10,0.3,0.875,"P4: low access / low survival"

@@ -1,0 +1,6 @@
+"term","median","conf.low","conf.high","p_direction_positive","term_label"
+"z_BMT_Access",17.2169052011746,14.5434843401995,19.3382677239789,1,"BMT access score"
+"z_BMT_Centers_per_10M",-2.37837360175338,-4.76658646859111,-0.113559295668744,0.019,"BMT centers per 10M"
+"z_Hematologists",-0.303382512453883,-3.52832371127432,1.91065568202306,0.391,"Hematologists per million"
+"z_Myeloma_Incidence",0.50399629614961,-1.40019555926018,2.87069924479028,0.692,"Myeloma incidence"
+"z_log_population",-0.432058393620952,-1.49281487063459,0.355412170049781,0.135,"Population size"
