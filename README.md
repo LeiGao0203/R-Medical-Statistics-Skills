@@ -11,12 +11,12 @@
 ## Contents
 
 - `basic-stats/`: t 检验、方差分析、卡方检验、相关分析、ROC、样本量、统计绘图等基础医学统计 skill。
-- `advanced-stats/`: 协方差分析、多元回归、Logistic 回归、生存分析、PCA、结构方程、多水平模型等进阶统计 skill。
+- `advanced-stats/`: 协方差分析、多元回归、Logistic 回归、生存分析、PCA、结构方程、多水平模型、潜在剖面分析等进阶统计 skill。
 - `literature-stats/`: 倾向评分、Fine-Gray、限制性立方样条、亚组分析、趋势检验等医学文献常见方法 skill。
 - `r-script/`: 原创 R 脚本 skill，用于为 RStudio、命令行 R 或非 notebook 用户生成可复现 `.R` 分析脚本。
 - `quarto-report/`: 原创 Quarto/R Markdown 报告 skill，用于生成可导出 HTML、Word 或 PDF 的医学统计分析报告。
 - `jupyter-notebook/`: 原创 Jupyter Notebook skill，用于创建、整理和验证可复现 notebook。
-- `example/`: 基于公开 Kaggle 数据集整理的可复现示例，包含演示数据、notebook、R 脚本、统计表和图形结果。
+- `example/`: 基于公开数据集整理的可复现示例，包含演示数据、notebook、R 脚本、统计表和图形结果。
 
 ## Examples
 
@@ -84,6 +84,16 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 - **Jupyter Notebook**：适合交互式探索、教学演示、逐步解释和需要 `.ipynb` 交付的任务。
 - **Quarto / R Markdown 报告**：使用 `quarto-report/`，适合正式报告、论文附录、课题汇报，以及可导出的 HTML、Word、PDF。
 
+## 潜在剖面分析示例
+
+`advanced-stats/latent-profile-analysis/` 提供医学 LPA 的完整工作流，覆盖连续指标选择、候选高斯混合模型、类别数选择、后验概率、分类不确定性、稳定性和外部变量推断边界。`example/nhanes-lpa/` 使用 CDC/NCHS 公开的 NHANES 2017–2018 XPT 文件，基于 BMI、腰围、血压、HbA1c 和血脂指标完成一个可复现的心代谢剖面示例；原始数据、派生数据、模型结果和图形按目录保留。该示例使用未加权 `mclust` 进行样本内探索，不能替代 NHANES 复杂抽样推断。
+
+### 子 agent 独立运行结果
+
+另一个独立子 agent 读取 LPA skill 后，在 [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/) 中重新完成了一个更小的三指标分析。它使用 BMI、腰围和平均收缩压，纳入 5,265 名 MEC 成人，其中 4,754 名为完整病例；在 `G=1–4`、`EEI/VVI/EEE` 候选模型中选择 `G=4, EEE`。最小类别为 262 人（5.5%），平均最大后验概率为 0.856。最终过程报告以 [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) 和已渲染的 [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html) 交付，图形见 [`nhanes_lpa_profile.png`](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)。该结果同样是未加权样本内探索，不能直接解释为全国代表性估计或临床亚型。
+
+![潜在剖面分析小红书封面](assets/xiaohongshu-lpa-cover.png)
+
 ## Install
 
 Codex 默认安装：
@@ -106,7 +116,7 @@ curl -fsSL https://raw.githubusercontent.com/LeiGao0203/R-Medical-Statistics-Ski
 
 - `basic-stats/`、`advanced-stats/`、`literature-stats/` 中与《R语言实战医学统计》相关的内容，改编自阿越就是我的开源项目 [R_medical_stat](https://github.com/ayueme/R_medical_stat)，按 CC BY-SA 4.0 发布。
 - `r-script/`、`quarto-report/` 和 `jupyter-notebook/` 为原创内容，按 Apache License 2.0 发布。
-- `example/` 中的数据来自对应 Kaggle 数据集；再次使用时请遵守 Kaggle 页面及原数据集的授权条款。
+- `example/` 中的数据来自对应公开数据源；再次使用时请遵守原数据集页面及其授权条款。
 
 详见 [LICENSE](LICENSE)。
 

@@ -14,6 +14,7 @@ assert_installed() {
   install_dir="$1"
   test -f "$install_dir/ttest/SKILL.md" || fail "basic statistics skills are not flattened into the target directory"
   test -f "$install_dir/logistic-reg/SKILL.md" || fail "advanced statistics skills are not flattened into the target directory"
+  test -f "$install_dir/latent-profile-analysis/SKILL.md" || fail "latent profile analysis skill is not installed"
   test -f "$install_dir/ps-matching/SKILL.md" || fail "literature statistics skills are not flattened into the target directory"
   test -f "$install_dir/r-script/SKILL.md" || fail "r-script skill is not copied"
   test -f "$install_dir/quarto-report/SKILL.md" || fail "quarto-report skill is not copied"

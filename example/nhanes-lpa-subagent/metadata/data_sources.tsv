@@ -1,0 +1,7 @@
+file	url	used_variables
+DEMO_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.XPT	SEQN,RIDSTATR,RIDAGEYR,WTMEC2YR,SDMVPSU,SDMVSTRA
+BMX_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BMX_J.XPT	SEQN,BMXBMI,BMXWAIST
+BPX_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPX_J.XPT	SEQN,BPXSY1-BPXSY4
+GHB_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GHB_J.XPT	not used in minimal three-indicator analysis
+TCHOL_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/TCHOL_J.XPT	not used in minimal three-indicator analysis
+HDL_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/HDL_J.XPT	not used in minimal three-indicator analysis

@@ -1,0 +1,10 @@
+variable	source_variable	role	direction
+bmi	BMXBMI	LPA indicator	higher = greater burden
+waist_cm	BMXWAIST	LPA indicator	higher = greater burden
+systolic_bp	row mean of BPXSY1-BPXSY4	LPA indicator	higher = greater burden
+hba1c	LBXGH	LPA indicator	higher = greater burden
+total_cholesterol	LBXTC	LPA indicator	higher = greater burden
+hdl_c_risk	-LBDHDD	LPA indicator	higher = lower HDL-C / greater burden
+WTMEC2YR	WTMEC2YR	reserved survey variable	not used for unweighted Mclust fit
+SDMVPSU	SDMVPSU	reserved survey variable	not used for unweighted Mclust fit
+SDMVSTRA	SDMVSTRA	reserved survey variable	not used for unweighted Mclust fit

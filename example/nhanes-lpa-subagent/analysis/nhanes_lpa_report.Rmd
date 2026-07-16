@@ -1,0 +1,143 @@
+---
+title: "NHANES 2017–2018 潜在剖面分析报告"
+author: "R Medical Statistics Skills / sub-agent workflow"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    df_print: paged
+params:
+  rerun_analysis: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 5.5)
+required <- c("dplyr", "ggplot2", "haven", "mclust", "knitr")
+missing <- required[!vapply(required, requireNamespace, logical(1), quietly = TRUE)]
+if (length(missing) > 0) stop("Install required packages: ", paste(missing, collapse = ", "))
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+  library(haven)
+})
+rmd_path <- knitr::current_input(dir = FALSE)
+candidate_paths <- c(
+  rmd_path,
+  file.path("example", "nhanes-lpa-subagent", "analysis", "nhanes_lpa_report.Rmd")
+)
+candidate_paths <- candidate_paths[!is.na(candidate_paths) & nzchar(candidate_paths) & file.exists(candidate_paths)]
+if (!length(candidate_paths)) stop("Cannot resolve the R Markdown input path.")
+rmd_path <- candidate_paths[[1]]
+example_dir <- normalizePath(dirname(rmd_path), mustWork = TRUE)
+repo_root <- normalizePath(file.path(example_dir, "../.."), mustWork = TRUE)
+analysis_script <- file.path(example_dir, "agent_lpa_analysis.R")
+if (isTRUE(params$rerun_analysis)) {
+  status <- system2(file.path(R.home("bin"), "Rscript"), analysis_script)
+  if (!identical(status, 0L)) stop("The analysis script did not finish successfully.")
+}
+results_dir <- normalizePath(file.path(example_dir, "..", "results"), mustWork = TRUE)
+derived_dir <- normalizePath(file.path(example_dir, "..", "data", "derived"), mustWork = TRUE)
+model_selection <- read.csv(file.path(results_dir, "model_selection.csv"), check.names = FALSE)
+class_sizes <- read.csv(file.path(results_dir, "class_sizes.csv"), check.names = FALSE)
+profile_means <- read.csv(file.path(results_dir, "profile_means_original_scale.csv"), check.names = FALSE)
+analysis_data <- read.csv(file.path(derived_dir, "analysis_data.csv"), check.names = FALSE)
+```
+
+# 研究目的
+
+使用 NHANES 2017–2018 成人体检数据中的 BMI、腰围和平均收缩压，探索是否存在具有不同心代谢指标组合的经验性潜在剖面。
+
+本报告复现子 agent 的独立分析过程。剖面是未加权、样本内的探索性结果，不代表美国总体估计，也不是经过验证的临床亚型。
+
+# 数据与样本
+
+原始数据来自 [CDC/NCHS NHANES 2017–2018](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)，通过 `SEQN` 合并。分析限制为 MEC 检查成人（`RIDSTATR == 2` 且 `RIDAGEYR >= 20`），普通 `mclust` 要求三个指标均有观测值，因此采用完整病例，不进行插补。
+
+```{r sample-summary}
+data.frame(
+  metric = c("Complete adult cases", "Number of variables", "Number of selected profiles"),
+  value = c(nrow(analysis_data), 3, sum(model_selection$selected))
+) %>%
+  knitr::kable(caption = "Analysis summary")
+```
+
+```{r indicators}
+profile_means %>%
+  select(indicator_label, unit) %>%
+  distinct() %>%
+  knitr::kable(caption = "Continuous indicators")
+```
+
+# 统计方法
+
+对 BMI、腰围和平均收缩压进行 Z 标准化，比较 `G=1–4` 与 `EEI`、`VVI`、`EEE` 三种协方差结构。使用 `mclust` 高斯有限混合模型；其 BIC 按 `2 logLik - p log(n)` 计算，因此数值越大表示相对拟合越好。类别选择同时考虑类别规模、平均最大后验概率和分类不确定性。
+
+NHANES 权重 `WTMEC2YR`、PSU 和分层变量保留在派生数据中，但普通 `Mclust()` 未使用复杂抽样设计。
+
+# 模型选择
+
+```{r model-selection}
+model_selection %>%
+  select(G, model, BIC, SABIC, ICL, min_class_n, min_class_prop,
+         avg_max_posterior, uncertain_lt_0_70, quality_ok, selected) %>%
+  head(12) %>%
+  knitr::kable(digits = 3, caption = "Candidate model comparison")
+```
+
+本次分析选择 `G=4, EEE`。选择结果应视为探索性结果；还需要在独立样本、不同缺失处理和调查设计敏感性分析中验证。
+
+# 剖面规模与分类质量
+
+```{r class-sizes}
+class_sizes %>%
+  knitr::kable(digits = 3, caption = "Class sizes and posterior classification quality")
+```
+
+平均最大后验概率为 `r round(mean(read.csv(file.path(results_dir, "posterior_classification.csv"))$max_posterior), 3)`；最大后验概率低于 0.70 的受试者保留在分析中，不通过删除边界个体来人为提高分类清晰度。
+
+```{r profile-means}
+profile_means %>%
+  select(label, indicator_label, unit, mean, n_hard_class) %>%
+  knitr::kable(digits = 3, caption = "Original-scale hard-class profile means")
+```
+
+# 标准化剖面图
+
+```{r profile-figure, echo=FALSE, fig.cap="Standardized model-estimated profile means."}
+posterior <- read.csv(file.path(results_dir, "posterior_classification.csv"), check.names = FALSE)
+indicator_names <- c("BMXBMI", "BMXWAIST", "SBP_MEAN")
+z_data <- scale(analysis_data[indicator_names])
+plot_data <- aggregate(z_data, by = list(profile = posterior$assigned_class), FUN = mean)
+names(plot_data)[-1] <- indicator_names
+plot_long <- reshape(plot_data, varying = indicator_names, v.names = "z_mean",
+                      timevar = "indicator", times = indicator_names,
+                      direction = "long")
+ggplot(plot_long, aes(indicator, z_mean, group = profile, color = factor(profile))) +
+  geom_hline(yintercept = 0, linetype = 2, color = "grey60") +
+  geom_line(linewidth = 1) + geom_point(size = 2) +
+  labs(title = "NHANES 2017–2018 LPA profiles", color = "Profile",
+       y = "Standardized mean", x = NULL) +
+  theme_minimal()
+```
+
+# 结果解释与限制
+
+- 结果识别的是当前样本中的连续指标组合，不应直接命名为疾病亚型。
+- 完整病例会改变目标人群；缺失可能与健康状态或检查行为有关。
+- 普通 `mclust` 未处理 NHANES 复杂抽样权重、PSU 和分层，因此不能作全国代表性推断。
+- 三个定义剖面的指标不应再作为独立外部验证变量；后续协变量或结局分析应传播分类不确定性。
+- 横断面数据不支持时间转变或因果解释。
+
+# 可复现入口
+
+纯 R 脚本：`analysis/agent_lpa_analysis.R`；本次交付的 R Markdown 报告：`analysis/nhanes_lpa_report.Rmd`。从仓库根目录渲染本报告：
+
+```r
+rmarkdown::render(
+  "example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd",
+  output_dir = "example/nhanes-lpa-subagent/results",
+  knit_root_dir = getwd()
+)
+```

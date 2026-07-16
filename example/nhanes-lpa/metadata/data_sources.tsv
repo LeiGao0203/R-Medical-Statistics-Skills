@@ -1,0 +1,7 @@
+file	url	purpose
+DEMO_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.XPT	Demographics, MEC weight, PSU, strata, age
+BMX_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BMX_J.XPT	BMI and waist circumference
+BPX_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPX_J.XPT	Systolic blood pressure measurements
+GHB_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GHB_J.XPT	Glycohemoglobin HbA1c
+TCHOL_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/TCHOL_J.XPT	Total cholesterol
+HDL_J.XPT	https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/HDL_J.XPT	HDL cholesterol

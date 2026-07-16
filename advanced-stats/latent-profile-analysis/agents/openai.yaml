@@ -1,0 +1,4 @@
+interface:
+  display_name: "Latent Profile Analysis"
+  short_description: "Reproducible medical LPA workflow in R"
+  default_prompt: "Use $latent-profile-analysis to design and run a reproducible medical latent profile analysis in R."

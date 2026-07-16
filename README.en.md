@@ -11,12 +11,12 @@ An AI coding agent skills collection for medical statistics and R-based statisti
 ## Contents
 
 - `basic-stats/`: Basic medical statistics skills, including t-tests, ANOVA, chi-square tests, correlation analysis, ROC analysis, sample size estimation, and statistical plotting.
-- `advanced-stats/`: Advanced statistics skills, including ANCOVA, multiple regression, logistic regression, survival analysis, PCA, structural equation modeling, and multilevel models.
+- `advanced-stats/`: Advanced statistics skills, including ANCOVA, multiple regression, logistic regression, survival analysis, PCA, structural equation modeling, multilevel models, and latent profile analysis.
 - `literature-stats/`: Skills for methods commonly seen in medical literature, including propensity score methods, Fine-Gray models, restricted cubic splines, subgroup analysis, and trend tests.
 - `r-script/`: Original R script skill for generating reproducible `.R` analysis scripts for RStudio, command-line R, and non-notebook users.
 - `quarto-report/`: Original Quarto/R Markdown report skill for generating medical statistics reports exportable to HTML, Word, or PDF.
 - `jupyter-notebook/`: Original Jupyter Notebook skill for creating, organizing, and validating reproducible notebooks.
-- `example/`: Reproducible examples based on public Kaggle datasets, including demo data, notebooks, R scripts, statistical tables, and generated figures.
+- `example/`: Reproducible examples based on public datasets, including demo data, notebooks, R scripts, statistical tables, and generated figures.
 
 ## Examples
 
@@ -84,6 +84,16 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 - **Jupyter Notebook**: Use for interactive exploration, teaching walkthroughs, step-by-step explanation, and `.ipynb` deliverables.
 - **Quarto / R Markdown reports**: Use `quarto-report/` for formal reports, manuscript appendices, project summaries, and exportable HTML, Word, or PDF outputs.
 
+## Latent profile analysis example
+
+`advanced-stats/latent-profile-analysis/` provides a medical LPA workflow covering continuous-indicator selection, candidate Gaussian mixture models, class-number selection, posterior probabilities, assignment uncertainty, stability, and boundaries for external-variable inference. `example/nhanes-lpa/` uses public CDC/NCHS NHANES 2017–2018 XPT files to run a reproducible cardiometabolic profile example based on BMI, waist circumference, blood pressure, HbA1c, and lipid indicators; raw data, derived data, model results, and figures are retained in a structured directory. The example uses an unweighted `mclust` fit for sample-internal exploration and does not replace NHANES complex-survey inference.
+
+### Independent sub-agent result
+
+An independent sub-agent read the LPA skill and ran a separate, smaller analysis in [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/). It used BMI, waist circumference, and mean systolic blood pressure, retaining 5,265 MEC-examined adults and 4,754 complete cases; among `G=1–4` and `EEI/VVI/EEE` candidates it selected `G=4, EEE`. The smallest class contained 262 participants (5.5%), and the mean maximum posterior probability was 0.856. The final process report is delivered as [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) with rendered output in [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html); the profile figure is at [`nhanes_lpa_profile.png`](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png). This is an unweighted sample-internal exploration, not a national estimate or validated clinical subtype.
+
+![Latent profile analysis Xiaohongshu cover](assets/xiaohongshu-lpa-cover.png)
+
 ## Install
 
 Default Codex install:
@@ -106,7 +116,7 @@ This repository uses multiple licenses:
 
 - Content in `basic-stats/`, `advanced-stats/`, and `literature-stats/` that is related to or adapted from *R语言实战医学统计* is adapted from [R_medical_stat](https://github.com/ayueme/R_medical_stat) by 阿越就是我 and is released under CC BY-SA 4.0.
 - `r-script/`, `quarto-report/`, and `jupyter-notebook/` are original content and are released under Apache License 2.0.
-- Data under `example/` comes from the corresponding Kaggle datasets; reuse should follow the license terms listed on the Kaggle dataset pages.
+- Data under `example/` comes from the corresponding public data sources; reuse should follow the terms listed on the original dataset pages.
 
 See [LICENSE](LICENSE) for details.
 
