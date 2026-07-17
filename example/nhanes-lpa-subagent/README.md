@@ -23,6 +23,8 @@ Rscript example/nhanes-lpa-subagent/analysis/agent_lpa_analysis.R
 - `results/model_selection.csv`：`G=1–4`、`EEI/VVI/EEE` 候选模型的 BIC、SABIC、ICL 和分类质量。
 - `results/class_sizes.csv`、`profile_means_original_scale.csv`、`posterior_classification.csv`：类别规模、原始量表剖面均值和个体后验概率。
 - `figures/nhanes_lpa_profile.png`：标准化剖面图。
+- `figures/nhanes_lpa_model_selection.png`：候选模型 BIC 比较图。
+- `figures/nhanes_lpa_class_sizes.png`：最终类别规模图。
 
 ## 子 agent 结果摘要
 
@@ -32,6 +34,14 @@ Rscript example/nhanes-lpa-subagent/analysis/agent_lpa_analysis.R
 - 平均最大后验概率 0.856；856 人最大后验概率低于 0.70，但均被保留。
 
 该分析使用普通 `mclust`，没有使用 NHANES 的权重、PSU 和分层变量进行复杂抽样推断；因此只能作为样本内探索性 LPA，不能直接解释为美国总体估计、临床亚型或因果结论。
+
+## 主要图表
+
+![候选模型 BIC 比较](figures/nhanes_lpa_model_selection.png)
+
+![标准化潜在剖面](figures/nhanes_lpa_profile.png)
+
+![类别规模](figures/nhanes_lpa_class_sizes.png)
 
 数据来源：[NHANES 2017–2018 官方数据入口](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)。
 

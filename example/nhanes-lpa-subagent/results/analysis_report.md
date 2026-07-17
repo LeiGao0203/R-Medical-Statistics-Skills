@@ -1,6 +1,6 @@
 # NHANES 2017–2018 minimal exploratory LPA
 
-Run time: 2026-07-17 00:14:14
+Run time: 2026-07-17 11:39:43
 Analysis N: 4754; random seed: 20260716.
 
 ## Skill and analysis specification
@@ -97,4 +97,4 @@ The accompanying figure plots standardized profile means. For orientation, Profi
 
 ## Output files
 
-The script is `analysis/agent_lpa_analysis.R`. Outputs are `data/derived/analysis_data.csv`, `results/model_selection.csv`, `results/class_sizes.csv`, `results/profile_means_original_scale.csv`, `results/posterior_classification.csv`, `results/analysis_report.md`, `results/session_info.txt`, and `figures/nhanes_lpa_profile.png`.
+The script is `analysis/agent_lpa_analysis.R`. Outputs are `data/derived/analysis_data.csv`, `results/model_selection.csv`, `results/class_sizes.csv`, `results/profile_means_original_scale.csv`, `results/posterior_classification.csv`, `results/analysis_report.md`, `results/session_info.txt`, and the three figures in `figures/`.

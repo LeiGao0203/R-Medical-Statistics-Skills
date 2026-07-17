@@ -86,13 +86,17 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 
 ## Latent profile analysis example
 
-`advanced-stats/latent-profile-analysis/` provides a medical LPA workflow covering continuous-indicator selection, candidate Gaussian mixture models, class-number selection, posterior probabilities, assignment uncertainty, stability, and boundaries for external-variable inference. `example/nhanes-lpa/` uses public CDC/NCHS NHANES 2017–2018 XPT files to run a reproducible cardiometabolic profile example based on BMI, waist circumference, blood pressure, HbA1c, and lipid indicators; raw data, derived data, model results, and figures are retained in a structured directory. The example uses an unweighted `mclust` fit for sample-internal exploration and does not replace NHANES complex-survey inference.
+`advanced-stats/latent-profile-analysis/` provides a medical LPA workflow covering continuous-indicator selection, candidate Gaussian mixture models, class-number selection, posterior probabilities, assignment uncertainty, stability, and boundaries for external-variable inference.
 
-### Independent sub-agent result
+### NHANES cardiometabolic profile example
 
-An independent sub-agent read the LPA skill and ran a separate, smaller analysis in [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/). It used BMI, waist circumference, and mean systolic blood pressure, retaining 5,265 MEC-examined adults and 4,754 complete cases; among `G=1–4` and `EEI/VVI/EEE` candidates it selected `G=4, EEE`. The smallest class contained 262 participants (5.5%), and the mean maximum posterior probability was 0.856. The final process report is delivered as [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) with rendered output in [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html); the profile figure is at [`nhanes_lpa_profile.png`](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png). This is an unweighted sample-internal exploration, not a national estimate or validated clinical subtype.
+In [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/), an independent sub-agent used NHANES 2017–2018 adult BMI, waist circumference, and mean systolic blood pressure to identify empirical cardiometabolic profiles. Of 5,265 MEC-examined adults, 4,754 were complete cases; the selected candidate was `G=4, EEE`, with a smallest class of 5.5% and mean maximum posterior probability of 0.856. This is an unweighted, sample-internal exploration rather than a national estimate or validated clinical subtype. The full process is available in [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) and [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html).
 
-![Latent profile analysis Xiaohongshu cover](assets/xiaohongshu-lpa-cover.png)
+![Candidate model comparison](example/nhanes-lpa-subagent/figures/nhanes_lpa_model_selection.png)
+
+![Standardized latent profiles](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)
+
+![Profile sizes and classification results](example/nhanes-lpa-subagent/figures/nhanes_lpa_class_sizes.png)
 
 ## Install
 

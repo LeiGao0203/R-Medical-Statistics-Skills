@@ -86,13 +86,17 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 
 ## 潜在剖面分析示例
 
-`advanced-stats/latent-profile-analysis/` 提供医学 LPA 的完整工作流，覆盖连续指标选择、候选高斯混合模型、类别数选择、后验概率、分类不确定性、稳定性和外部变量推断边界。`example/nhanes-lpa/` 使用 CDC/NCHS 公开的 NHANES 2017–2018 XPT 文件，基于 BMI、腰围、血压、HbA1c 和血脂指标完成一个可复现的心代谢剖面示例；原始数据、派生数据、模型结果和图形按目录保留。该示例使用未加权 `mclust` 进行样本内探索，不能替代 NHANES 复杂抽样推断。
+`advanced-stats/latent-profile-analysis/` 提供医学 LPA 的完整工作流，覆盖连续指标选择、候选高斯混合模型、类别数选择、后验概率、分类不确定性、稳定性和外部变量推断边界。
 
-### 子 agent 独立运行结果
+### NHANES 心代谢指标剖面示例
 
-另一个独立子 agent 读取 LPA skill 后，在 [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/) 中重新完成了一个更小的三指标分析。它使用 BMI、腰围和平均收缩压，纳入 5,265 名 MEC 成人，其中 4,754 名为完整病例；在 `G=1–4`、`EEI/VVI/EEE` 候选模型中选择 `G=4, EEE`。最小类别为 262 人（5.5%），平均最大后验概率为 0.856。最终过程报告以 [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) 和已渲染的 [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html) 交付，图形见 [`nhanes_lpa_profile.png`](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)。该结果同样是未加权样本内探索，不能直接解释为全国代表性估计或临床亚型。
+在 [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/) 中，独立子 agent 使用 NHANES 2017–2018 成人 BMI、腰围和平均收缩压识别经验性心代谢剖面。5,265 名 MEC 成人中有 4,754 名完整病例，候选模型最终选择 `G=4, EEE`；最小类别占 5.5%，平均最大后验概率为 0.856。该结果是未加权、样本内的探索性分析，不代表全国估计或临床亚型。完整过程见 [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) 和 [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html)。
 
-![潜在剖面分析小红书封面](assets/xiaohongshu-lpa-cover.png)
+![候选模型比较](example/nhanes-lpa-subagent/figures/nhanes_lpa_model_selection.png)
+
+![标准化潜在剖面](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)
+
+![类别规模与分类结果](example/nhanes-lpa-subagent/figures/nhanes_lpa_class_sizes.png)
 
 ## Install
 

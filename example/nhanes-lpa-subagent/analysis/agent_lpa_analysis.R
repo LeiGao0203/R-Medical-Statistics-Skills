@@ -279,6 +279,47 @@ profile_plot <- ggplot(plot_data, aes(indicator, z_mean, group = profile, color 
 ggplot2::ggsave(file.path(figures_dir, "nhanes_lpa_profile.png"), profile_plot,
                 width = 8.2, height = 5.0, dpi = 300)
 
+model_plot_data <- model_selection[model_selection$status == "ok", , drop = FALSE]
+model_plot <- ggplot(model_plot_data, aes(x = G, y = BIC, color = model, group = model)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2.2) +
+  geom_point(
+    data = model_plot_data[model_plot_data$selected, , drop = FALSE],
+    shape = 21, size = 4, fill = "#f6c85f", color = "#333333", stroke = 1.1
+  ) +
+  scale_x_continuous(breaks = sort(unique(model_plot_data$G))) +
+  labs(
+    title = "Candidate model comparison",
+    subtitle = "Higher BIC is preferred for this mclust specification; highlighted point is selected",
+    x = "Number of profiles (G)", y = "BIC", color = "Covariance model"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+ggplot2::ggsave(file.path(figures_dir, "nhanes_lpa_model_selection.png"), model_plot,
+                width = 8.2, height = 5.0, dpi = 300)
+
+class_plot_data <- class_sizes
+class_plot_data$label <- factor(class_plot_data$label, levels = class_plot_data$label)
+class_plot <- ggplot(class_plot_data, aes(x = label, y = proportion, fill = label)) +
+  geom_col(width = 0.68, show.legend = FALSE) +
+  geom_text(
+    aes(label = paste0(round(100 * proportion, 1), "%")),
+    vjust = -0.35, size = 3.5
+  ) +
+  scale_y_continuous(
+    limits = c(0, max(class_plot_data$proportion) * 1.18),
+    labels = function(x) paste0(round(100 * x), "%")
+  ) +
+  labs(
+    title = "Estimated profile sizes",
+    subtitle = "Hard classification counts shown as a proportion of complete cases",
+    x = NULL, y = "Complete-case proportion"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(axis.text.x = element_text(angle = 18, hjust = 1))
+ggplot2::ggsave(file.path(figures_dir, "nhanes_lpa_class_sizes.png"), class_plot,
+                width = 8.2, height = 5.0, dpi = 300)
+
 session_lines <- c(
   paste0("Seed: ", seed),
   paste0("Input XPT files found: ", paste(raw_files, collapse = ", ")), 
@@ -353,7 +394,7 @@ report <- c(
   "",
   "## Output files",
   "",
-  "The script is `analysis/agent_lpa_analysis.R`. Outputs are `data/derived/analysis_data.csv`, `results/model_selection.csv`, `results/class_sizes.csv`, `results/profile_means_original_scale.csv`, `results/posterior_classification.csv`, `results/analysis_report.md`, `results/session_info.txt`, and `figures/nhanes_lpa_profile.png`."
+  "The script is `analysis/agent_lpa_analysis.R`. Outputs are `data/derived/analysis_data.csv`, `results/model_selection.csv`, `results/class_sizes.csv`, `results/profile_means_original_scale.csv`, `results/posterior_classification.csv`, `results/analysis_report.md`, `results/session_info.txt`, and the three figures in `figures/`."
 )
 writeLines(report, file.path(results_dir, "analysis_report.md"), useBytes = TRUE)
 
