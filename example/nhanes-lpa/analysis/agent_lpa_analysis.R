@@ -322,11 +322,12 @@ ggplot2::ggsave(file.path(figures_dir, "nhanes_lpa_class_sizes.png"), class_plot
 
 session_lines <- c(
   paste0("Seed: ", seed),
-  paste0("Input XPT files found: ", paste(raw_files, collapse = ", ")), 
+  paste0("Input XPT files found: ", paste(raw_files, collapse = ", ")),
   paste0("Selected model: G=", G, " ", selected_row$model),
   paste0("Analysis N: ", nrow(complete)),
   capture.output(sessionInfo())
 )
+session_lines <- sub("[[:space:]]+$", "", session_lines)
 writeLines(session_lines, file.path(results_dir, "session_info.txt"), useBytes = TRUE)
 
 selected_profile_text <- paste(

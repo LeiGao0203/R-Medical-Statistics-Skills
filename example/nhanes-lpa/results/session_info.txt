@@ -1,13 +1,7 @@
-Chosen model: VVV 
-Chosen classes: 5 
-Complete adult cases: 4506 
-# A tibble: 1 × 8
-  model classes bic_mclust log_likelihood n_parameters error error_message
-  <chr>   <int>      <dbl>          <dbl>        <dbl> <lgl> <chr>        
-1 VVV         5    -60844.        -29837.          139 FALSE <NA>         
-# ℹ 1 more variable: model_description <chr>
-
-Session information:
+Seed: 20260716
+Input XPT files found: BMX_J.XPT, BPX_J.XPT, DEMO_J.XPT, GHB_J.XPT, HDL_J.XPT, TCHOL_J.XPT
+Selected model: G=4 EEE
+Analysis N: 4754
 R version 4.2.0 (2022-04-22)
 Platform: aarch64-apple-darwin20 (64-bit)
 Running under: macOS 26.5.2
@@ -20,19 +14,17 @@ locale:
 [1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8
 
 attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
+[1] stats     graphics  grDevices utils     datasets  methods   base
 
 other attached packages:
-[1] tidyr_1.3.2  mclust_6.1.1 dplyr_1.2.1 
+[1] ggplot2_4.0.3 mclust_6.1.1  haven_2.5.0
 
 loaded via a namespace (and not attached):
- [1] magrittr_2.0.3     hms_1.1.1          bit_4.0.4          tidyselect_1.2.1  
- [5] R6_2.6.1           ragg_1.3.2         rlang_1.2.0        tools_4.2.0       
- [9] parallel_4.2.0     grid_4.2.0         vroom_1.5.7        gtable_0.3.6      
-[13] utf8_1.2.2         cli_3.6.6          withr_3.0.2        systemfonts_1.1.0 
-[17] ellipsis_0.3.2     bit64_4.0.5        tibble_3.3.1       lifecycle_1.0.5   
-[21] crayon_1.5.1       textshaping_0.4.0  S7_0.2.2           purrr_1.2.2       
-[25] readr_2.1.2        RColorBrewer_1.1-3 farver_2.1.0       ggplot2_4.0.3     
-[29] tzdb_0.3.0         vctrs_0.7.3        glue_1.6.2         haven_2.5.0       
-[33] labeling_0.4.2     compiler_4.2.0     pillar_1.11.1      forcats_0.5.1     
-[37] generics_0.1.2     scales_1.4.0       pkgconfig_2.0.3   
+ [1] magrittr_2.0.3     hms_1.1.1          tidyselect_1.2.1   R6_2.6.1
+ [5] ragg_1.3.2         rlang_1.2.0        dplyr_1.2.1        tools_4.2.0
+ [9] grid_4.2.0         gtable_0.3.6       cli_3.6.6          withr_3.0.2
+[13] systemfonts_1.1.0  ellipsis_0.3.2     tibble_3.3.1       lifecycle_1.0.5
+[17] textshaping_0.4.0  S7_0.2.2           readr_2.1.2        RColorBrewer_1.1-3
+[21] farver_2.1.0       tzdb_0.3.0         vctrs_0.7.3        glue_1.6.2
+[25] labeling_0.4.2     compiler_4.2.0     pillar_1.11.1      forcats_0.5.1
+[29] generics_0.1.2     scales_1.4.0       pkgconfig_2.0.3

@@ -90,13 +90,13 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 
 ### NHANES cardiometabolic profile example
 
-In [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/), an independent sub-agent used NHANES 2017–2018 adult BMI, waist circumference, and mean systolic blood pressure to identify empirical cardiometabolic profiles. Of 5,265 MEC-examined adults, 4,754 were complete cases; the selected candidate was `G=4, EEE`, with a smallest class of 5.5% and mean maximum posterior probability of 0.856. This is an unweighted, sample-internal exploration rather than a national estimate or validated clinical subtype. The full process is available in [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) and [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html).
+In [`example/nhanes-lpa/`](example/nhanes-lpa/), an independent sub-agent used NHANES 2017–2018 adult BMI, waist circumference, and mean systolic blood pressure to identify empirical cardiometabolic profiles. Of 5,265 MEC-examined adults, 4,754 were complete cases; the selected candidate was `G=4, EEE`, with a smallest class of 5.5% and mean maximum posterior probability of 0.856. This is an unweighted, sample-internal exploration rather than a national estimate or validated clinical subtype. The full process is available in [`nhanes_lpa_report.Rmd`](example/nhanes-lpa/analysis/nhanes_lpa_report.Rmd) and [`nhanes_lpa_report.html`](example/nhanes-lpa/results/nhanes_lpa_report.html).
 
-![Candidate model comparison](example/nhanes-lpa-subagent/figures/nhanes_lpa_model_selection.png)
+![Candidate model comparison](example/nhanes-lpa/figures/nhanes_lpa_model_selection.png)
 
-![Standardized latent profiles](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)
+![Standardized latent profiles](example/nhanes-lpa/figures/nhanes_lpa_profile.png)
 
-![Profile sizes and classification results](example/nhanes-lpa-subagent/figures/nhanes_lpa_class_sizes.png)
+![Profile sizes and classification results](example/nhanes-lpa/figures/nhanes_lpa_class_sizes.png)
 
 ## Install
 

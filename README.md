@@ -90,13 +90,13 @@ gam_pred <- predict(gam_fit, newdata = gam_grid, se.fit = TRUE)
 
 ### NHANES 心代谢指标剖面示例
 
-在 [`example/nhanes-lpa-subagent/`](example/nhanes-lpa-subagent/) 中，独立子 agent 使用 NHANES 2017–2018 成人 BMI、腰围和平均收缩压识别经验性心代谢剖面。5,265 名 MEC 成人中有 4,754 名完整病例，候选模型最终选择 `G=4, EEE`；最小类别占 5.5%，平均最大后验概率为 0.856。该结果是未加权、样本内的探索性分析，不代表全国估计或临床亚型。完整过程见 [`nhanes_lpa_report.Rmd`](example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd) 和 [`nhanes_lpa_report.html`](example/nhanes-lpa-subagent/results/nhanes_lpa_report.html)。
+在 [`example/nhanes-lpa/`](example/nhanes-lpa/) 中，独立子 agent 使用 NHANES 2017–2018 成人 BMI、腰围和平均收缩压识别经验性心代谢剖面。5,265 名 MEC 成人中有 4,754 名完整病例，候选模型最终选择 `G=4, EEE`；最小类别占 5.5%，平均最大后验概率为 0.856。该结果是未加权、样本内的探索性分析，不代表全国估计或临床亚型。完整过程见 [`nhanes_lpa_report.Rmd`](example/nhanes-lpa/analysis/nhanes_lpa_report.Rmd) 和 [`nhanes_lpa_report.html`](example/nhanes-lpa/results/nhanes_lpa_report.html)。
 
-![候选模型比较](example/nhanes-lpa-subagent/figures/nhanes_lpa_model_selection.png)
+![候选模型比较](example/nhanes-lpa/figures/nhanes_lpa_model_selection.png)
 
-![标准化潜在剖面](example/nhanes-lpa-subagent/figures/nhanes_lpa_profile.png)
+![标准化潜在剖面](example/nhanes-lpa/figures/nhanes_lpa_profile.png)
 
-![类别规模与分类结果](example/nhanes-lpa-subagent/figures/nhanes_lpa_class_sizes.png)
+![类别规模与分类结果](example/nhanes-lpa/figures/nhanes_lpa_class_sizes.png)
 
 ## Install
 

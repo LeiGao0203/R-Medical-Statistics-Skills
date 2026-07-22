@@ -25,7 +25,7 @@ suppressPackageStartupMessages({
 rmd_path <- knitr::current_input(dir = FALSE)
 candidate_paths <- c(
   rmd_path,
-  file.path("example", "nhanes-lpa-subagent", "analysis", "nhanes_lpa_report.Rmd")
+  file.path("example", "nhanes-lpa", "analysis", "nhanes_lpa_report.Rmd")
 )
 candidate_paths <- candidate_paths[!is.na(candidate_paths) & nzchar(candidate_paths) & file.exists(candidate_paths)]
 if (!length(candidate_paths)) stop("Cannot resolve the R Markdown input path.")
@@ -136,8 +136,8 @@ ggplot(plot_long, aes(indicator, z_mean, group = profile, color = factor(profile
 
 ```r
 rmarkdown::render(
-  "example/nhanes-lpa-subagent/analysis/nhanes_lpa_report.Rmd",
-  output_dir = "example/nhanes-lpa-subagent/results",
+  "example/nhanes-lpa/analysis/nhanes_lpa_report.Rmd",
+  output_dir = "example/nhanes-lpa/results",
   knit_root_dir = getwd()
 )
 ```

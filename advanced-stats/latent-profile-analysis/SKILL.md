@@ -93,10 +93,10 @@ example/nhanes-lpa/
 从仓库根目录运行：
 
 ```bash
-Rscript example/nhanes-lpa/analysis/01_nhanes_lpa.R
+Rscript example/nhanes-lpa/analysis/agent_lpa_analysis.R
 ```
 
-案例使用 BMI、腰围、平均收缩压、HbA1c、总胆固醇和 HDL-C 作为心代谢连续指标；由于 `mclust` 标准接口不直接处理 NHANES 复杂抽样权重，案例把剖面识别标记为未加权样本内探索，并保留 `WTMEC2YR`、`SDMVPSU`、`SDMVSTRA` 供后续调查设计敏感性研究使用。不要将该示例直接解释为美国总体的复杂抽样推断。
+案例使用 BMI、腰围和平均收缩压作为心代谢连续指标；由于 `mclust` 标准接口不直接处理 NHANES 复杂抽样权重，案例把剖面识别标记为未加权样本内探索，并保留 `WTMEC2YR`、`SDMVPSU`、`SDMVSTRA` 供后续调查设计敏感性研究使用。不要将该示例直接解释为美国总体的复杂抽样推断。
 
 ## 医学论文最小报告集
 

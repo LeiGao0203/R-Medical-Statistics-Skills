@@ -1,7 +1,0 @@
-analysis_variable	source_variable	unit	role
-BMXBMI	BMXBMI	kg/m^2	continuous LPA indicator
-BMXWAIST	BMXWAIST	cm	continuous LPA indicator
-SBP_MEAN	mean(BPXSY1,BPXSY2,BPXSY3,BPXSY4)	mmHg	continuous LPA indicator
-WTMEC2YR	WTMEC2YR	MEC weight	retained, not used by ordinary Mclust
-SDMVPSU	SDMVPSU	PSU identifier	retained, not used by ordinary Mclust
-SDMVSTRA	SDMVSTRA	stratum identifier	retained, not used by ordinary Mclust

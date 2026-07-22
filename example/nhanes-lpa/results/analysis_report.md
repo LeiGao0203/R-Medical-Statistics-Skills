@@ -1,6 +1,6 @@
 # NHANES 2017–2018 minimal exploratory LPA
 
-Run time: 2026-07-17 11:39:43
+Run time: 2026-07-22 16:10:05
 Analysis N: 4754; random seed: 20260716.
 
 ## Skill and analysis specification
